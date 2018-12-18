@@ -8,9 +8,9 @@ class Photowall extends Component {
   state = {};
   render() {
     return (
-      <div>
-        {this.props.posts.map(post => (
-          <Image post={post} />
+      <div className="image-grid">
+        {this.props.posts.map((post, index) => (
+          <Image key={index} post={post} />
         ))}
       </div>
     );

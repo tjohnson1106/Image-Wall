@@ -1,11 +1,9 @@
 import React, { Component } from "react";
 
 class Image extends Component {
-  state = {};
-
   render() {
     const post = this.props.post;
-    return {};
+    return <figure className="figure" />;
   }
 }
 

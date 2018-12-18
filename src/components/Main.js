@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 
 import Title from "./Title";
+import Photowall from "./Photowall";
 
-const post = [
+const posts = [
   {
     id: "0",
     description: "phones",
@@ -24,11 +25,11 @@ const post = [
 ];
 
 class Main extends Component {
-  state = {};
   render() {
     return (
       <div>
         <Title title={"Photowall"} />
+        <Photowall posts={posts} />
       </div>
     );
   }
