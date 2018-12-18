@@ -1,0 +1,17 @@
+html {
+  font-size: 10px;
+}
+
+h1 {
+  font-family: "Charm";
+  text-align: center;
+  font-size: 11rem;
+  font-weight: 100;
+  margin: 2 rem 0;
+  color: black;
+}
+
+@font-face {
+  font-family: "Charm";
+  src: url("https://fonts.googleapis.com/css?family=Charm");
+}
