@@ -1,20 +1,17 @@
-import React, { Component } from "react";
+import React from "react";
 
 import Image from "./Image";
 
-// receive posts into component
+// receive posts into function
 
-class Photowall extends Component {
-  state = {};
-  render() {
-    return (
-      <div className="image-grid">
-        {this.props.posts.map((post, index) => (
-          <Image key={index} post={post} />
-        ))}
-      </div>
-    );
-  }
+function Photowall(props) {
+  return (
+    <div className="image-grid">
+      {props.posts.map((post, index) => (
+        <Image key={index} post={post} />
+      ))}
+    </div>
+  );
 }
 
 export default Photowall;
