@@ -39,6 +39,15 @@ class Main extends Component {
     }));
   }
 
+  componentDidMount = () => {
+    console.log("cdm");
+  };
+
+  componentDidUpdate = (prevProps, prevState) => {
+    console.log(prevState.posts);
+    console.log(this.state);
+  };
+
   render() {
     return (
       <div>
