@@ -28,6 +28,7 @@ class Main extends Component {
         }
       ]
     };
+    this.removePhoto = this.removePhoto.bind(this);
   }
 
   // Photowall -> image
