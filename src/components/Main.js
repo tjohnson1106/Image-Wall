@@ -1,7 +1,9 @@
 import React, { Component } from "react";
+import { Route } from "react-router-dom";
 
 import Title from "./Title";
 import Photowall from "./Photowall";
+import AddPhoto from "./AddPhoto";
 
 class Main extends Component {
   constructor() {
@@ -26,9 +28,11 @@ class Main extends Component {
           imageLink:
             "https://images.pexels.com/photos/247676/pexels-photo-247676.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
         }
-      ]
+      ],
+      screen: "photos"
     };
     this.removePhoto = this.removePhoto.bind(this);
+    this.navigate = this.navigate.bind(this);
   }
 
   // Photowall -> image
@@ -37,6 +41,12 @@ class Main extends Component {
     this.setState((state) => ({
       posts: state.posts.filter((post) => post !== postRemoved)
     }));
+  }
+
+  navigate() {
+    this.setState({
+      screen: "addPhoto"
+    });
   }
 
   componentDidMount = () => {
@@ -51,8 +61,28 @@ class Main extends Component {
   render() {
     return (
       <div>
-        <Title title={"Photowall"} />
-        <Photowall posts={this.state.posts} onRemovePhoto={this.removePhoto} />
+        <Route
+          path=""
+          render={() => (
+            <div>
+              <Title title={"Photowall"} />
+              <Photowall
+                posts={this.state.posts}
+                onRemovePhoto={this.removePhoto}
+                onNavigate={this.navigate}
+              />
+            </div>
+          )}
+        />
+
+        <Route
+          path="/addPhoto"
+          render={() => (
+            <div>
+              <AddPhoto />
+            </div>
+          )}
+        />
       </div>
     );
   }
