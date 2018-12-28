@@ -66,3 +66,22 @@ h1 {
   background-size: contain;
   border: none;
 }
+
+.form {
+  background: red;
+  max-width: 360px;
+  margin: 0 auto;
+  padding: 45px;
+  text-align: center;
+}
+
+/* TODO: pick below from 122820181800 */
+
+.form input {
+  font-family: sans-serif;
+  background: #f2f2f2;
+  width: 100%;
+  border: none;
+  padding: 15px;
+  box-sizing: border-box;
+}

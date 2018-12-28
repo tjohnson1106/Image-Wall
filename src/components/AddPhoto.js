@@ -2,7 +2,17 @@ import React, { Component } from "react";
 
 class AddPhoto extends Component {
   render() {
-    return <h1>Add Photo Page</h1>;
+    return (
+      <div>
+        <h1>Photo Wall</h1>
+        <div className="form">
+          <form>
+            <input type="text" placeholder="link" />
+            <input type="text" placeholder="description" />
+          </form>
+        </div>
+      </div>
+    );
   }
 }
 

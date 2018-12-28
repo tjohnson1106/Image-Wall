@@ -28,11 +28,9 @@ class Main extends Component {
           imageLink:
             "https://images.pexels.com/photos/247676/pexels-photo-247676.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
         }
-      ],
-      screen: "photos"
+      ]
     };
     this.removePhoto = this.removePhoto.bind(this);
-    this.navigate = this.navigate.bind(this);
   }
 
   // Photowall -> image
@@ -41,12 +39,6 @@ class Main extends Component {
     this.setState((state) => ({
       posts: state.posts.filter((post) => post !== postRemoved)
     }));
-  }
-
-  navigate() {
-    this.setState({
-      screen: "addPhoto"
-    });
   }
 
   componentDidMount = () => {
@@ -62,6 +54,7 @@ class Main extends Component {
     return (
       <div>
         <Route
+          exact={true}
           path=""
           render={() => (
             <div>
@@ -75,14 +68,7 @@ class Main extends Component {
           )}
         />
 
-        <Route
-          path="/addPhoto"
-          render={() => (
-            <div>
-              <AddPhoto />
-            </div>
-          )}
-        />
+        <Route path="/addPhoto" component={AddPhoto} />
       </div>
     );
   }
