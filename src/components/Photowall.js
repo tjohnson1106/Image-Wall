@@ -7,10 +7,13 @@ import Image from "./Image";
 
 function Photowall(props) {
   return (
-    <div className="image-grid">
-      {props.posts.map((post, index) => (
-        <Image key={index} post={post} onRemovePhoto={props.onRemovePhoto} />
-      ))}
+    <div>
+      <button className="addIcon"> + </button>
+      <div className="image-grid">
+        {props.posts.map((post, index) => (
+          <Image key={index} post={post} onRemovePhoto={props.onRemovePhoto} />
+        ))}
+      </div>
     </div>
   );
 }
