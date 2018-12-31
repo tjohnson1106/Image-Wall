@@ -41,6 +41,12 @@ class Main extends Component {
     }));
   }
 
+  addPhoto(postSubmitted) {
+    this.setState((state) => ({
+      posts: state.posts.concat([postSubmitted])
+    }));
+  }
+
   componentDidMount = () => {
     console.log("cdm");
   };
@@ -68,7 +74,16 @@ class Main extends Component {
           )}
         />
 
-        <Route path="/addPhoto" component={AddPhoto} />
+        <Route
+          path="/addPhoto"
+          render={() => (
+            <AddPhoto
+              onAddPhoto={(addedPosts) => {
+                this.addPhoto(addedPosts);
+              }}
+            />
+          )}
+        />
       </div>
     );
   }
