@@ -98,5 +98,9 @@ button {
 }
 
 .form button:hover {
-  background: gray;
+  background: #7b8589;
+}
+
+button:hover {
+  border-color: blue;
 }
