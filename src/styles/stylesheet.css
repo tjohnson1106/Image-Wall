@@ -48,7 +48,7 @@ h1 {
   justify-content: center;
 }
 
-.remove-button {
+button {
   flex-basis: 48%;
   color: red;
   font-size: 15px;
@@ -68,14 +68,11 @@ h1 {
 }
 
 .form {
-  background: red;
   max-width: 360px;
   margin: 0 auto;
   padding: 45px;
   text-align: center;
 }
-
-/* TODO: pick below from 122820181800 */
 
 .form input {
   font-family: sans-serif;
@@ -84,4 +81,22 @@ h1 {
   border: none;
   padding: 15px;
   box-sizing: border-box;
+  font-size: 14px;
+  margin: 0 0 15px;
+}
+
+.form button {
+  font-family: sans-serif;
+  text-transform: uppercase;
+  background: #065784;
+  width: 100%;
+  border: none;
+  padding: 15px;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.form button:hover {
+  background: gray;
 }
