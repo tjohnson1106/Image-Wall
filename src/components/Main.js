@@ -11,7 +11,6 @@ class Main extends Component {
   }
 
   render() {
-    console.log(this.state.posts);
     return (
       <div>
         <Route
@@ -20,11 +19,11 @@ class Main extends Component {
           render={() => (
             <div>
               <Title title={"Photowall"} />
-              {/* <Photowall
-                posts={this.state.posts}
-                onRemovePhoto={this.removePhoto}
-                onNavigate={this.navigate}
-              /> */}
+              <Photowall
+                posts={this.props.posts}
+                // onRemovePhoto={this.removePhoto}
+                // onNavigate={this.navigate}
+              />
             </div>
           )}
         />
@@ -36,8 +35,8 @@ class Main extends Component {
                 this.addPhoto(addedPosts);
                 history.push("./");
               }}
-            /> */}
-        )} />
+        //     /> */}
+        // )} />
       </div>
     );
   }

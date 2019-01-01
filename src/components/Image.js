@@ -23,7 +23,6 @@ function Image(props) {
 }
 
 Image.propTypes = {
-  onRemovePhoto: PropTypes.func.isRequired,
   post: PropTypes.object.isRequired
 };
 
