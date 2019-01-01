@@ -15,9 +15,17 @@ function Photowall(props) {
       </Link>
 
       <div className="image-grid">
-        {props.posts.map((post, index) => (
-          <Image key={index} post={post} onRemovePhoto={props.onRemovePhoto} />
-        ))}
+        {props.posts
+          .sort(function(x, y) {
+            return y.id - x.id;
+          })
+          .map((post, index) => (
+            <Image
+              key={index}
+              post={post}
+              onRemovePhoto={props.onRemovePhoto}
+            />
+          ))}
       </div>
     </div>
   );
