@@ -5,16 +5,16 @@ import { createStore } from "redux";
 import { Provider } from "react-redux";
 
 import rootReducer from "./redux/reducer";
-import Main from "./components/Main";
+import App from "./components/App";
 import "./styles/stylesheet.css";
 import * as serviceWorker from "./serviceWorker";
 
 const store = createStore(rootReducer);
 
 ReactDOM.render(
-  <Provider>
+  <Provider store={store}>
     <Router>
-      <Main />
+      <App />
     </Router>
   </Provider>,
   document.getElementById("root")
