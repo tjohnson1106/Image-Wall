@@ -76,10 +76,11 @@ class Main extends Component {
 
         <Route
           path="/addPhoto"
-          render={() => (
+          render={({ history }) => (
             <AddPhoto
               onAddPhoto={(addedPosts) => {
                 this.addPhoto(addedPosts);
+                history.push("./");
               }}
             />
           )}
