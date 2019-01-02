@@ -7,6 +7,9 @@ function mapStateToProps(state) {
     posts: state
   };
 }
+
+function mapDispatchToProps(dispatch) {}
+
 // App = Main source of orgin for store
 const App = connect(mapStateToProps)(Main);
 
