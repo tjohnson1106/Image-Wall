@@ -11,10 +11,6 @@ class Main extends Component {
     super();
   }
 
-  componentDidMount() {
-    this.props.removePost(1);
-  }
-
   render() {
     console.log(this.props);
     return (
@@ -30,16 +26,16 @@ class Main extends Component {
             </div>
           )}
         />
-        {/* <Route
+        <Route
           path="/addPhoto"
           render={({ history }) => (
             <AddPhoto
               onAddPhoto={(addedPosts) => {
-                this.addPhoto(addedPosts);
                 history.push("./");
               }}
-        //     /> */}
-        // )} />
+            />
+          )}
+        />
       </div>
     );
   }

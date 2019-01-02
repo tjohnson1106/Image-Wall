@@ -1,6 +1,7 @@
 import posts from "../data/posts";
 
 const postReducer = function posts(state = posts, action) {
+  console.log(action.type);
   switch (action.type) {
     case "REMOVE_POST":
       return [
