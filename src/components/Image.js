@@ -13,7 +13,7 @@ function Image(props) {
         {/* have access to all props in main */}
         <button
           onClick={() => {
-            props.removePost(1);
+            props.removePost(props.index);
           }}
         >
           Remove
