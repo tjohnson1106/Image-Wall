@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Route } from "react-router-dom";
+import { Route, Link } from "react-router-dom";
 
 import Title from "./Title";
 import Photowall from "./Photowall";
@@ -15,12 +15,14 @@ class Main extends Component {
     console.log(this.props);
     return (
       <div>
+        <h1>
+          <Link to="/">PhotoWall</Link>
+        </h1>
         <Route
           exact={true}
           path=""
           render={() => (
             <div>
-              <Title title={"Photowall"} />
               {/* all props passed to PhotoWall */}
               <Photowall posts={this.props.posts} {...this.props} />
             </div>

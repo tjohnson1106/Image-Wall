@@ -1,6 +1,7 @@
 html {
   font-size: 10px;
-  font-family: sans-serif;
+  font-family: "Lato", sans-serif;
+  /* font-family: sans-serif; */
 }
 
 p {
@@ -9,17 +10,22 @@ p {
 }
 
 h1 {
-  font-family: "Charm";
+  font-family: "Lato", sans-serif;
   text-align: center;
-  font-size: 13rem;
-  font-weight: 100;
+  font-size: 13.5rem;
+  font-weight: ;
   letter-spacing: -1px;
   color: black;
 }
 
+h1 a {
+  color: black;
+  text-decoration: none;
+}
+
 @font-face {
-  font-family: "Charm";
-  src: url("https://fonts.googleapis.com/css?family=Charm");
+  font-family: "Major Mono Display", monospace;
+  src: url("https://fonts.googleapis.com/css?family=Lato:300");
 }
 
 .image-grid {
