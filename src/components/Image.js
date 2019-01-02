@@ -10,9 +10,10 @@ function Image(props) {
         <p>{post.description}</p>
       </figcaption>
       <div className="button-container">
+        {/* have access to all props in main */}
         <button
           onClick={() => {
-            props.onRemovePhoto(post);
+            props.removePost(1);
           }}
         >
           Remove

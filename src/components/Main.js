@@ -25,11 +25,8 @@ class Main extends Component {
           render={() => (
             <div>
               <Title title={"Photowall"} />
-              <Photowall
-                posts={this.props.posts}
-                // onRemovePhoto={this.removePhoto}
-                // onNavigate={this.navigate}
-              />
+              {/* all props passed to PhotoWall */}
+              <Photowall posts={this.props.posts} {...this.props} />
             </div>
           )}
         />

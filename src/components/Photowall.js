@@ -20,11 +20,7 @@ function Photowall(props) {
             return y.id - x.id;
           })
           .map((post, index) => (
-            <Image
-              key={index}
-              post={post}
-              onRemovePhoto={props.onRemovePhoto}
-            />
+            <Image key={index} post={post} {...props} />
           ))}
       </div>
     </div>
