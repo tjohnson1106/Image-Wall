@@ -33,7 +33,10 @@ class Main extends Component {
             <AddPhoto {...this.props} onHistory={history} />
           )}
         />
-        <Route path="/single" render={() => <Single />} />
+        <Route
+          path="/single/:id"
+          render={(params) => <Single {...this.props} {...params} />}
+        />
       </div>
     );
   }
