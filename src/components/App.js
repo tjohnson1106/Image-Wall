@@ -3,7 +3,7 @@ import { bindActionCreators } from "redux";
 import { withRouter } from "react-router";
 
 import Main from "./Main";
-import { removePost } from "../redux/actions";
+import * as actions from "../redux/actions";
 
 function mapStateToProps(state) {
   return {
@@ -12,7 +12,7 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ removePost }, dispatch);
+  return bindActionCreators(actions, dispatch);
 }
 
 // App = Main source of orgin for store

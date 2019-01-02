@@ -10,6 +10,8 @@ const postReducer = function posts(state = posts, action) {
         // determining state subsequent to index of removed post
         ...state.slice(action.index + 1)
       ];
+    case "ADD_POST":
+      return [...state, action.post];
     default:
       return state;
   }

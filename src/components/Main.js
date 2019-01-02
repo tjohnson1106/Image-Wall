@@ -29,11 +29,7 @@ class Main extends Component {
         <Route
           path="/addPhoto"
           render={({ history }) => (
-            <AddPhoto
-              onAddPhoto={(addedPosts) => {
-                history.push("./");
-              }}
-            />
+            <AddPhoto {...this.props} onHistory={history} />
           )}
         />
       </div>
