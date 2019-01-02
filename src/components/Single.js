@@ -2,6 +2,9 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import Image from "./Image";
+import Comments from "./Comments";
+
+// Image Comments -> Single presentational
 
 function Single(props) {
   const { match, posts } = props;
@@ -13,12 +16,15 @@ function Single(props) {
   return (
     <div className="single-photo">
       <Image post={post} />
+      <Comments />
     </div>
   );
 }
 
+// number should be required after comments build
+
 Single.propTypes = {
-  id: PropTypes.number.isRequired,
+  id: PropTypes.number,
   match: PropTypes.object,
   posts: PropTypes.object.isRequired
 };
