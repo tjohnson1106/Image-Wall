@@ -12,7 +12,7 @@ class Main extends Component {
   }
 
   componentDidMount() {
-    this.props.dispatch(removePost(1));
+    this.props.removePost(1);
   }
 
   render() {

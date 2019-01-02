@@ -1,6 +1,8 @@
 import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
 
 import Main from "./Main";
+import { removePost } from "../redux/actions";
 
 function mapStateToProps(state) {
   return {
@@ -8,9 +10,14 @@ function mapStateToProps(state) {
   };
 }
 
-function mapDispatchToProps(dispatch) {}
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ removePost }, dispatch);
+}
 
 // App = Main source of orgin for store
-const App = connect(mapStateToProps)(Main);
+const App = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Main);
 
 export default App;
