@@ -23,6 +23,20 @@ export function startAddingPost(post) {
   };
 }
 
+export function startLoadingPost() {
+  return (dispatch) => {
+    return database
+      .ref("posts")
+      .once("value")
+      .then((snapshot) => {
+        let posts = [];
+        snapshot.forEach((childSnapshot) => {
+          posts.push(childSnapshot.val());
+        });
+      });
+  };
+}
+
 export function removePost(index) {
   return {
     type: "REMOVE_POST",
