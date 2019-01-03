@@ -2,17 +2,23 @@ import { combineReducers } from "redux";
 
 import _posts from "../data/posts";
 
-function comments(state = [], action) {
-  return state;
-}
-
 ////////////////////////////////////////////////////////////
 // App.js -> returned state: posts: state.posts////////////
 // App.js -> returned state: comments: state.comments/////
 /////////////////////////////////////////////////////////
 
+function comments(state = [], action) {
+  switch (action.type) {
+    case "ADD_COMMENT":
+      return [...state, action.comment];
+    default:
+      return state;
+  }
+
+  return state;
+}
+
 function posts(state = _posts, action) {
-  console.log(action.type);
   switch (action.type) {
     case "REMOVE_POST":
       return [

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 
 class Comments extends Component {
   constructor() {
@@ -15,6 +16,10 @@ class Comments extends Component {
   render() {
     return (
       <div className="comments">
+        {// map ->  for each comment return a paragraph tag -> array index is unique key
+        this.props.comments.map((comment, index) => {
+          return <p key={index}>{comment}</p>;
+        })}
         <form className="comment-form" onSubmit={this.handleSubmit}>
           <input type="text" placeholder="comment" name="comment" />
           <input type="submit" hidden />
@@ -23,5 +28,9 @@ class Comments extends Component {
     );
   }
 }
+
+Comments.propTypes = {
+  comments: PropTypes.array
+};
 
 export default Comments;

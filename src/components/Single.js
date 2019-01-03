@@ -10,13 +10,14 @@ function Single(props) {
   const { match, posts } = props;
   const id = Number(match.params.id);
   const post = posts.find((post) => post.id === id);
+  const comments = props.comments;
 
   console.log(post);
   // TODO: must implement remove photo
   return (
     <div className="single-photo">
       <Image post={post} />
-      <Comments addComment={props.addComment} />
+      <Comments addComment={props.addComment} comments={comments} />
     </div>
   );
 }
@@ -26,7 +27,7 @@ function Single(props) {
 Single.propTypes = {
   id: PropTypes.number,
   match: PropTypes.object,
-  posts: PropTypes.object.isRequired
+  posts: PropTypes.array
 };
 
 export default Single;
