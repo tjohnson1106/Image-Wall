@@ -22,9 +22,10 @@ export function addPost(post) {
 
 // add comments
 // payload -> comment
-export function addComment(comment) {
+export function addComment(comment, postId) {
   return {
     type: "ADD_COMMENT",
-    comment
+    comment,
+    postId
   };
 }

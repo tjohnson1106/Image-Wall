@@ -10,14 +10,14 @@ function Single(props) {
   const { match, posts } = props;
   const id = Number(match.params.id);
   const post = posts.find((post) => post.id === id);
-  const comments = props.comments;
+  const comments = props.comments[match.params.id] || [];
 
   console.log(post);
   // TODO: must implement remove photo
   return (
     <div className="single-photo">
       <Image post={post} />
-      <Comments addComment={props.addComment} comments={comments} />
+      <Comments addComment={props.addComment} comments={comments} id={id} />
     </div>
   );
 }

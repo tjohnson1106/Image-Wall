@@ -7,10 +7,24 @@ import _posts from "../data/posts";
 // App.js -> returned state: comments: state.comments/////
 /////////////////////////////////////////////////////////
 
-function comments(state = [], action) {
+function comments(state = {}, action) {
   switch (action.type) {
     case "ADD_COMMENT":
-      return [...state, action.comment];
+      // remember: action.postId<not an array> =
+      // ^action.comment<array> (ES6)
+
+      // if undefined(no postID is not stateful return [action.postId]: [action.comment])
+      // else postID exists comments array + new comment
+
+      if (!state[action.postId]) {
+        return { ...state, [action.postId]: [action.comment] };
+      } else {
+        return {
+          ...state,
+          [action.postId]: [...state[action.postId], action.comment]
+        };
+      }
+
     default:
       return state;
   }
