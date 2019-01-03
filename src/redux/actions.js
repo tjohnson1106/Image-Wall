@@ -16,6 +16,9 @@ export function startAddingPost(post) {
       })
       .then(() => {
         dispatch(addPost(post));
+      })
+      .catch((error) => {
+        console.log(error);
       });
   };
 }
