@@ -11,6 +11,8 @@ class Comments extends Component {
     event.preventDefault();
     const comment = event.target.elements.comment.value;
     this.props.addComment(comment, this.props.id);
+
+    event.target.elements.comment.value = "";
   }
 
   render() {

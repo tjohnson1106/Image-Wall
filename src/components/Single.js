@@ -14,7 +14,6 @@ function Single(props) {
   const index = props.posts.findIndex((post) => post.id === id);
 
   console.log(post);
-  // TODO: must implement remove photo
   return (
     <div className="single-photo">
       <Image post={post} {...props} index={index} />
