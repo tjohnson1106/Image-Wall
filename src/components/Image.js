@@ -18,6 +18,7 @@ function Image(props) {
         <button
           onClick={() => {
             props.removePost(props.index);
+            props.history.push("/");
           }}
         >
           Remove
