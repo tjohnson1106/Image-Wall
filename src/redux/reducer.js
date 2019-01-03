@@ -1,6 +1,6 @@
 import { combineReducers } from "redux";
 
-import posts from "../data/posts";
+import _posts from "../data/posts";
 
 function comments(state = [], action) {
   return state;
@@ -11,7 +11,7 @@ function comments(state = [], action) {
 // App.js -> returned state: comments: state.comments/////
 /////////////////////////////////////////////////////////
 
-function posts(state = posts, action) {
+function posts(state = _posts, action) {
   console.log(action.type);
   switch (action.type) {
     case "REMOVE_POST":

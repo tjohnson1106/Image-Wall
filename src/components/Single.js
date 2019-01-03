@@ -16,7 +16,7 @@ function Single(props) {
   return (
     <div className="single-photo">
       <Image post={post} />
-      <Comments />
+      <Comments addComment={props.addComment} />
     </div>
   );
 }
