@@ -86,6 +86,28 @@ export function startAddingComment(comment, postId) {
   };
 }
 
+export function startLoadingComments() {
+  return (dispatch) => {
+    return database
+      .ref("comments")
+      .once("value")
+      .then((snapshot) => {
+        let comments = {};
+        // comments key(postId) -> value
+        snapshot.forEach((childSnapshot) => {
+          comments[childSnapshot.key] = Object.values([childSnapshot.val()]);
+        });
+      });
+  };
+}
+
+export function loadComments(comments) {
+  return {
+    type: "LOAD_COMMENTS",
+    comments
+  };
+}
+
 export function startRemovingPost(index, id) {
   return (dispatch) => {
     return database
