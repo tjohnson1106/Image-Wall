@@ -25,6 +25,9 @@ function comments(state = {}, action) {
         };
       }
 
+    case "LOAD_COMMENTS":
+      return action.comments;
+
     default:
       return state;
   }
