@@ -97,6 +97,7 @@ export function startLoadingComments() {
         snapshot.forEach((childSnapshot) => {
           comments[childSnapshot.key] = Object.values([childSnapshot.val()]);
         });
+        dispatch(loadComments(comments));
       });
   };
 }
