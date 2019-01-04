@@ -13,17 +13,21 @@ function Single(props) {
   const comments = props.comments[match.params.id] || [];
   const index = props.posts.findIndex((post) => post.id === id);
 
-  console.log(post);
-  return (
-    <div className="single-photo">
-      <Image post={post} {...props} index={index} />
-      <Comments
-        startAddingComment={props.startAddingComment}
-        comments={comments}
-        id={id}
-      />
-    </div>
-  );
+  if (this.props.loading === true) {
+    return <div className="loader">...loading</div>;
+  } else {
+    console.log(post);
+    return (
+      <div className="single-photo">
+        <Image post={post} {...props} index={index} />
+        <Comments
+          startAddingComment={props.startAddingComment}
+          comments={comments}
+          id={id}
+        />
+      </div>
+    );
+  }
 }
 
 // number should be required after comments build

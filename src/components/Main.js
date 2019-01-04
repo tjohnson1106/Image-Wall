@@ -6,8 +6,17 @@ import AddPhoto from "./AddPhoto";
 import Single from "./Single";
 
 class Main extends Component {
+  // fix refresh is component state see Single component loading conditional
+  state = {
+    loading: true
+  };
+
   componentDidMount() {
-    this.props.startLoadingPost();
+    this.props.startLoadingPost().then(() => {
+      this.setState({
+        loading: false
+      });
+    });
     this.props.startLoadingComments();
   }
 
@@ -36,7 +45,9 @@ class Main extends Component {
         />
         <Route
           path="/single/:id"
-          render={(params) => <Single {...this.props} {...params} />}
+          render={(params) => (
+            <Single loading={this.state.loading} {...this.props} {...params} />
+          )}
         />
       </div>
     );
