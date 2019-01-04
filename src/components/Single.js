@@ -15,7 +15,7 @@ function Single(props) {
 
   if (props.loading === true) {
     return <div className="loader">...loading</div>;
-  } else {
+  } else if (post) {
     console.log(post);
     return (
       <div className="single-photo">
@@ -27,6 +27,8 @@ function Single(props) {
         />
       </div>
     );
+  } else {
+    return <h1>...no post found</h1>;
   }
 }
 
