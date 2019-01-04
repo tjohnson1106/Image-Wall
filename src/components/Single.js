@@ -13,7 +13,7 @@ function Single(props) {
   const comments = props.comments[match.params.id] || [];
   const index = props.posts.findIndex((post) => post.id === id);
 
-  if (this.props.loading === true) {
+  if (props.loading === true) {
     return <div className="loader">...loading</div>;
   } else {
     console.log(post);
