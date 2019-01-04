@@ -17,7 +17,7 @@ function Image(props) {
         {/* have access to all props in main */}
         <button
           onClick={() => {
-            props.removePost(props.index);
+            props.startRemovingPost(props.index, post.id);
             props.history.push("/");
           }}
         >

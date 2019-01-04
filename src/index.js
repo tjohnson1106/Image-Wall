@@ -7,7 +7,6 @@ import thunk from "redux-thunk";
 
 import rootReducer from "./redux/reducer";
 import App from "./components/App";
-import { database } from "./config/database";
 import "./styles/stylesheet.css";
 import * as serviceWorker from "./serviceWorker";
 

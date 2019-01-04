@@ -17,7 +17,11 @@ function Single(props) {
   return (
     <div className="single-photo">
       <Image post={post} {...props} index={index} />
-      <Comments addComment={props.addComment} comments={comments} id={id} />
+      <Comments
+        startAddingComment={props.startAddingComment}
+        comments={comments}
+        id={id}
+      />
     </div>
   );
 }

@@ -64,13 +64,42 @@ export function addComment(comment, postId) {
   };
 }
 
-export function startRemovingPosts(index, id) {
+// post id to direct to proper node
+export function startAddingComment(comment, postId) {
+  return (dispatch) => {
+    return (
+      database
+        .ref(`comments/${postId}`)
+        // push appends comments to firebase unique ID
+        .push(comment)
+        .then(() => {
+          dispatch(addComment(comment, postId));
+        })
+        .catch((error) => {
+          console.log(
+            "start adding comment error",
+            error,
+            "start adding comment error"
+          );
+        })
+    );
+  };
+}
+
+export function startRemovingPost(index, id) {
   return (dispatch) => {
     return database
       .ref(`posts/${id}`)
       .remove()
       .then(() => {
         dispatch(removePost(index));
+      })
+      .catch((error) => {
+        console.log(
+          "start removing post error",
+          error,
+          "start removing post error"
+        );
       });
   };
 }
