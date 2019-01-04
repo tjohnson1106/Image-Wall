@@ -95,7 +95,7 @@ export function startLoadingComments() {
         let comments = {};
         // comments key(postId) -> value
         snapshot.forEach((childSnapshot) => {
-          comments[childSnapshot.key] = Object.values([childSnapshot.val()]);
+          comments[childSnapshot.key] = Object.values(childSnapshot.val());
         });
         dispatch(loadComments(comments));
       });
